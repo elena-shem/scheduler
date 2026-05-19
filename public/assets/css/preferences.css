@@ -1,0 +1,81 @@
+
+#schedule {
+    margin: 15px 0;
+    border-collapse: collapse;
+    background: #eee;
+    border: 1px solid #444;
+}
+
+#schedule td {
+    width: 200px;
+    height: 40px;
+    border: 1px solid #444;
+    padding: 4px 8px;
+    background: #ddd;
+    font-weight: bold;
+}
+
+#schedule td.examday {
+    cursor: e-resize;
+}
+#schedule td.examhour {
+    cursor: n-resize;
+}
+#schedule td.examcourse {
+    cursor: cell;
+}
+
+#schedule td.examday {
+    text-align: right;
+}
+#schedule td.examhour {
+    text-align: center;
+}
+
+#schedule td.examcourse {
+    opacity: 0.5;
+    background: lightcoral;
+}
+#schedule td.examcourse:hover {
+    opacity: 1;
+}
+
+#schedule td.available {
+    background: palegreen;
+}
+
+
+
+
+#guide {
+    margin: 0;
+
+}
+#guide li {
+    margin-top: 6px;
+}
+
+input[type=radio] {
+    margin: 6px 0 0 10px;
+}
+
+textarea[form=submission] {
+    margin: 8px 0 0;
+    resize: vertical;
+    padding: 6px 8px;
+}
+
+#mouse-alert-div{
+    position: absolute;
+    float: left;
+    color:white;
+    padding:25px;
+    border: 3px solid white;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+    z-index: 1000;
+
+}
+
+

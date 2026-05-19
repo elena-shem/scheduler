@@ -1,0 +1,406 @@
+
+#assigner {
+  box-sizing: border-box;
+  position: relative;            
+  width: 100%;
+  color: #222;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px); 
+}
+
+#assigner * {
+    box-sizing: border-box;
+}
+
+#topbar {
+    flex: 0 0 auto;
+    border-top: solid 2px #2C3E50;
+    border-bottom: solid 2px #2C3E50;
+    padding: 2px 4px;
+    background-color: #ddd;
+    position: relative;
+}
+#topbar #selectExamperiod {
+    margin: 8px 15px 0 0;
+}
+#topbar #selectExamperiod option.active {
+    font-weight: bold;
+}
+#topbar #assignmentsCounter {
+    margin: 6px 10px 0 0;
+    border: solid 1px #888;
+    padding: 0 6px;
+    background-color: #fff;
+}
+#topbar #player {
+    margin-left: 20px;
+}
+#topbar button {
+    margin: 0 2px !important;
+    padding: 8px 12px !important;
+}
+#topbar button .glyphicon {
+    padding: 0 !important;
+}
+#topbar #removeSelections:hover {
+    color: #ffe45c;
+}
+#topbar #undoAssignment:hover {
+    color: #ffe45c;
+}
+#topbar #toggleAssigner:hover {
+    color: powderblue;
+}
+#topbar #toggleAssigner.running {
+    color: lightgreen;
+}
+#topbar #nextAssignment:hover {
+    color: powderblue;
+}
+#topbar #resetAssignments:hover {
+    color: #ffe45c;
+}
+#topbar #clearAssignments:hover {
+    color: lightpink;
+}
+#topbar #selectDoctoralsToSendEmail {
+    color: #ffe45c;
+}
+#topbar #downloadExcel {
+    color: lightgreen;
+    padding-right: 14px !important;
+}
+#topbar #saveAssignments {
+    display: inline-block;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+#topbar #saveAssignments > button[type="submit"],
+#topbar #closeAssignments {
+    margin-top: 1px !important;
+    padding: 5px 12px !important;
+}
+#topbar #saveAssignments > button[type="submit"]:hover {
+    color: lightgreen;
+}
+
+#sendEmailsModal .modal-dialog {
+    max-width: 600px;
+    height: calc(100% - 60px);
+}
+#sendEmailsModal .modal-content {
+    display: flex;
+    flex-direction: column;
+}
+#sendEmailsModal .modal-header,
+#sendEmailsModal .modal-footer {
+    margin-top: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+#sendEmailsModal .modal-header .close {
+    color: #444;
+    opacity: .5;
+}
+#sendEmailsModal .modal-header .close:hover {
+    opacity: 1;
+}
+#sendEmailsModal .modal-body {
+    min-height: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+}
+#sendEmailsModal .toolbox {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+#sendEmailsModal .content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-top: 20px;
+    overflow: auto;
+}
+#sendEmailsModal .modal-header p {
+    margin: 8px 0 0;
+    font-size: 90%;
+    color: #888;
+}
+#sendEmailsModal table {
+    margin: 0;
+}
+#sendEmailsModal table,
+#sendEmailsModal tbody,
+#sendEmailsModal tr {
+    border: none !important;
+    cursor: pointer;
+}
+#sendEmailsModal tr {
+    border-width: 1px 0 !important;
+    border-color: #ddd !important;
+    border-style: solid !important;
+}
+#sendEmailsModal tr.selected {
+    background-color: #ddffdd;
+}
+#sendEmailsModal tr:hover {
+    background-color: #eee;
+}
+#sendEmailsModal td {
+    padding: 6px 10px 6px 20px;
+    border: none !important;
+}
+#sendEmailsModal .glyphicon-ok {
+    color: #2f8034;
+}
+#sendEmailsModal tr:not(.selected) .glyphicon-ok {
+    visibility: hidden;
+}
+
+
+
+
+/* *****************************************************************************
+ * 
+ */
+
+.de-pad {
+    padding: 0;
+}
+.de-pad-left {
+    padding-left: 2px;
+}
+.de-pad-right {
+    padding-right: 2px;
+}
+
+.fill-height { min-height: 0; }
+
+/* *****************************************************************************
+ * General table styling
+ */
+
+table {
+    border-collapse: collapse;
+    border: solid 1px #ccc;
+    width: 100%;
+    margin-bottom: 100px;
+    font-size: 90%;
+}
+
+th,
+td {
+    width: 1px;
+    white-space: nowrap;
+    border-top: solid 1px #ccc !important;
+    border-right: solid 1px #ccc !important;
+    padding: 2px 6px;
+}
+th {
+    background-color: #ddd;
+}
+
+th.merge-with-above,
+td.merge-with-above {
+    border-top: none !important;
+}
+th.merge-with-right,
+td.merge-with-right {
+    border-right: none !important;
+}
+
+th button,
+td button {
+    margin: 3px !important;
+    padding: 3px !important;
+}
+th button:hover,
+td button:hover {
+    color: powderblue !important;
+}
+
+/* *****************************************************************************
+ * 
+ */
+
+td.course.dummy {
+    background-color: #ffffd8;
+}
+
+#assignments th:last-child,
+#assignments td:last-child {
+    width: auto;
+}
+#assignments td.course:hover {
+    background-color: powderblue;
+    cursor: pointer;
+}
+#assignments td.void {
+    border-top: none;
+}
+#assignments td.doctorals {
+    vertical-align: top;
+}
+#assignments td.doctorals.drag-target-valid {
+    background-color: #d8ffd8;
+}
+#assignments td.doctorals.drag-target-invalid {
+    background-color: #d8d8d8;
+}
+#assignments td.doctorals.drag-target-warning {
+    background-color: #ffd8d8;
+}
+#assignments td.doctorals .assignedDoctoral {
+    margin: 2px;
+    border-radius: 15px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    background-color: #ddd;
+}
+#assignments td.doctorals .assignedDoctoral.notAvailable {
+    background-color: lightpink;
+}
+.examperiod-active #assignments td.doctorals .assignedDoctoral:hover {
+    padding: 2px 6px;
+    border: solid 2px #888;
+    cursor: url("../img/remove.png") 12 12, not-allowed;
+}
+
+#assignments,
+#doctorals {
+  overflow-y: auto;   /* auto обычно лучше, чем scroll */
+  min-height: 0;      /* ключевое */
+}
+
+#doctorals tr td:nth-child(3) {
+    vertical-align: top;
+    padding-left: 3px;
+}
+#doctorals tr td:nth-child(3):hover {
+    background-color: powderblue;
+    cursor: pointer;
+}
+#doctorals tr td:nth-child(3) .name {
+    display: inline-block;
+    height: 28px;
+    padding: 4px 6px 0;
+}
+.examperiod-active #doctorals tr td:nth-child(3) .name:hover {
+    background-color: #ddd;
+    cursor: move;
+}
+
+#modal-doctoral-info table,
+#modal-examcourse-info table {
+    margin-bottom: 10px;
+}
+#modal-doctoral-info td,
+#modal-examcourse-info td {
+    width: auto;
+    text-align: left;
+}
+#modal-doctoral-info td:first-child,
+#modal-examcourse-info td:first-child {
+    background-color: #ddd;
+    width: 1px;
+    white-space: nowrap;
+}
+#modal-doctoral-info td.comment,
+#modal-examcourse-info td.course,
+#modal-examcourse-info td.doctoralsEmails {
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
+    max-width: 1px;
+}
+#modal-examcourse-info td.doctoralsEmails a,
+#modal-examcourse-info td.doctoralsEmails a:visited {
+    color: #0069d6;
+}
+
+.selected {
+    background-color: powderblue;
+}
+
+/* Styling for state representation of:
+ *  availabitiles counter,
+ *  supervisions assigned,
+ *  remaining hours
+ */
+
+.completed {
+    background-color: palegreen;
+}
+.onlimit {
+    background-color: #ffe45c;
+}
+.overflowed {
+    background-color: lightpink;
+}
+.notenough {
+    background-color: lightpink !important;
+}
+
+/* Styling for highlighting examcourses and doctorals
+ * representing the state of assignments and availabilities
+ */
+
+.assigned-available {
+    background-color: palegreen;
+}
+.assigned-unavailable {
+    background-color: #ffe45c;
+}
+.unassigned-available {
+    background-color: inherit;
+}
+.unassigned-unavailable {
+    background-color: lightpink;
+}
+
+.blur {
+    opacity: 0.25;
+}
+
+.red {
+    background-color: pink;
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+
+.alert {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    white-space: nowrap;
+    z-index: 9999;
+    color: #fff;
+}
+
+/* Убеждаемся, что подложка всегда на весь экран и выше всего контента */
+.modal-backdrop {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 1040 !important;
+}
+
+/* Окно должно быть строго выше подложки */
+.modal {
+    z-index: 1050 !important;
+}
+
+/* Убираем возможные конфликты слоев у родителя */
+#assigner {
+    z-index: 1 !important;
+}

@@ -1,0 +1,83 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -100px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: 100px;
+}
+#footer {
+    color: #ffffff;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+
+#wrap > .container-fluid {
+    padding-top: 60px;
+}
+#wrap > .container{
+    padding-top: 60px;
+}
+.container-fluid .credit {
+    margin: 20px 0;
+    text-align: center;
+}
+
+code {
+    font-size: 80%;
+}
+
+/* Custom Styles
+----------------------------------------------------*/
+#footer{
+    padding-top: 15px;
+
+
+    -webkit-box-shadow: 0px -9px 14px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    0px -9px 14px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         0px -9px 14px 0px rgba(50, 50, 50, 0.5);
+}
+.navbar{
+    -webkit-box-shadow: 0px 5px 14px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    0px 5px 14px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         0px 5px 14px 0px rgba(50, 50, 50, 0.5);
+}
+#wrap{
+    background-image:url('../img/tile.png');
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #9ca3b1;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+table {
+    border-collapse: inherit;
+    border-spacing: 0;
+}

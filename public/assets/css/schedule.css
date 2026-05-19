@@ -1,0 +1,186 @@
+
+#schedule {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #222;
+    background-color: #fff;
+}
+
+#schedule * {
+    box-sizing: border-box;
+}
+
+#topbar {
+    border-top: solid 2px #2C3E50;
+    border-bottom: solid 2px #2C3E50;
+    padding: 2px 4px;
+    background-color: #ddd;
+    position: relative;
+}
+#topbar #selectExamperiod {
+    margin: 8px 15px 0 0;
+}
+#topbar #selectExamperiod option.active {
+    font-weight: bold;
+}
+#topbar #assignmentsCounter {
+    margin: 6px 10px 0 0;
+    border: solid 1px #888;
+    padding: 0 6px;
+    background-color: #fff;
+}
+#topbar #player {
+    margin-left: 20px;
+}
+#topbar .btn {
+    margin: 0 2px !important;
+    padding: 6px 12px 5px !important;
+}
+#topbar form,
+#topbar .form-group {
+    margin: 0;
+    padding: 0;
+}
+
+/* *****************************************************************************
+ * 
+ */
+
+.fill-height {
+    min-height: 100%;
+}
+
+/* *****************************************************************************
+ * 
+ */
+
+#courses {
+    position: relative;
+    overflow-y: scroll;
+    min-height: 100%;
+}
+#courses table {
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+#courses td {
+    padding: 2px 4px;
+}
+#courses tr:first-child td {
+    padding-top: 5px;
+}
+#courses th {
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px 0 1px 25px;
+    padding: 20px 28px;
+    background-color: #2C3E50;
+    color: #eee;
+    font-weight: normal;
+}
+#courses tbody {
+    margin: 10px;
+    padding: 10px;
+}
+
+#calendar {
+    position: relative;
+    overflow-y: scroll;
+    min-height: 100%;
+}
+#calendar table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 100px;
+    color: #333;
+}
+#calendar tr:hover td:first-child {
+    background-color: #eee;
+}
+#calendar th,
+#calendar td {
+    border: solid 1px #aaa;
+    vertical-align: top;
+}
+#calendar th,
+#calendar td:first-child {
+    background-color: #ddd;
+    font-weight: bold;
+}
+#calendar th {
+    padding: 5px 8px;
+    text-align: center;
+}
+#calendar td {
+    height: 40px;
+}
+#calendar td:first-child {
+    width: 1px;
+    text-align: right;
+    padding: 9px 12px;
+}
+#calendar td:nth-child(n+2) {
+    padding: 6px 5px;
+}
+
+.drag {
+    position: relative;
+    width: 100%;
+    max-width: 25em;
+    padding: 10px 15px;
+    border-radius: 15%;
+    border: solid 1px #bbb;
+    background-color: powderblue;
+    color: #222;
+    cursor: move;
+    z-index: 10;
+    text-align: center;
+    font-size: 95%;
+}
+.drag:hover {
+    background-color: #afeeee;
+}
+#calendar .drag:nth-child(n+2) {
+    margin-top: 4px;
+}
+#courses table:nth-child(2) .drag {
+    background-color: #b8eea8;
+}
+
+.drag .remove {
+    display: none;
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    font-size: 150%;
+    color: pink;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.drag .remove:hover {
+    color: palevioletred;
+}
+#calendar .drag:hover .remove {
+    display: block;
+}
+
+.drag.dummy {
+    background-color: #ffffd8;
+}
+.drag.dummy:hover {
+    background-color: #ffffe8;
+}
+
+.alert {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    white-space: nowrap;
+    z-index: 9999;
+    color: #fff;
+}
+

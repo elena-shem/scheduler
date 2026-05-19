@@ -1,0 +1,12 @@
+.fullButton > a{
+    text-decoration: underline;
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
+}
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}

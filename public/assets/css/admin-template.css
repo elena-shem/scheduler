@@ -1,0 +1,123 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -100px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: 100px;
+}
+#footer {
+    color: #ffffff;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.container-fluid .credit {
+    margin: 20px 0;
+    text-align: center;
+}
+
+code {
+    font-size: 80%;
+}
+
+/* Custom Styles
+----------------------------------------------------*/
+
+.form-group {
+    margin-bottom: 21px;
+}
+select[multiple], select[size] {
+    min-height: 200px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    border-top: 1px solid #9ca3b1;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: middle;
+}
+table {
+    border-spacing: 0;
+
+}
+
+.table-responsive {
+
+    margin-bottom: 0;
+    overflow-x: auto;
+}
+
+.collapse.width {
+    height: auto;
+    -webkit-transition: width 2s ease-in-out;
+    -moz-transition: width 2s ease-in-out;
+    -o-transition: width 2s ease-in-out;
+    transition: width 2s ease-in-out;
+}
+
+.btn-toolbar > .btn-group {
+    min-width: 300px;
+}
+
+.settings-container{
+    width:600px;
+    margin-left: 50px;
+}
+.settings-container fieldset{
+    width:400px;
+}
+.settings-container .nav-tabs>li>a{
+    background-color: #818681;
+    color: #ffffff;
+}
+.settings-container .nav-tabs>li.active>a,
+.settings-container .nav-tabs>li>a:hover,
+.settings-container .nav-tabs>li>a:focus{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-block,
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+    min-width:70px;
+}
+
+.top-buffer { margin-top:20px; }
+
+.import-danger{
+    padding-top:22px;
+    padding-bottom:22px;
+    padding-left:20px;
+    background-color: yellow;
+    border-radius: 4px;
+    -webkit-box-shadow: 15px 15px 29px 5px rgba(0,0,0,0.41);
+    -moz-box-shadow: 15px 15px 29px 5px rgba(0,0,0,0.41);
+    box-shadow: 15px 15px 29px 5px rgba(0,0,0,0.41);
+
+}

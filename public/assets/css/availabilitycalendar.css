@@ -1,0 +1,69 @@
+/* ===== Availability Calendar — warm + translucent ===== */
+
+
+#schedule{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgba(255,255,255,0.97);          /* almost white */
+  border: 1px solid rgba(70,60,50,0.14);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+#schedule th,
+#schedule td{
+  border-right: 1px solid rgba(70,60,50,0.10);
+  border-bottom: 1px solid rgba(70,60,50,0.10);
+  padding: 12px 14px;
+  text-align: center;
+  color: #1f2328;
+}
+
+#schedule tr > *:last-child{ border-right: 0; }
+#schedule tbody tr:last-child > *{ border-bottom: 0; }
+
+/* Hour header cells */
+#schedule .examhour{
+  background: rgba(31,53,88,0.72);   /* NAVY */
+  color: rgba(255,255,255,0.95);     /* white text */
+  font-weight: 800;
+}
+
+/* Left day label */
+#schedule .examday{
+  background: rgba(255,255,255,0.97);  
+  color: rgba(31,53,88,0.92);
+  font-weight: 800;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Total row */
+#schedule .totalAvailabilities td{
+  background: rgba(43,111,138,0.16); /* teal */
+  color: rgba(31,53,88,0.95);
+  font-weight: 800;
+}
+#schedule .totalAvailabilities td:first-child{
+  text-align: left;
+  border-left: 0 !important;
+}
+
+/* zebra */
+#schedule tbody tr:nth-child(even):not(.totalAvailabilities) td{
+  background: rgba(31,53,88,0.03);
+}
+
+/* Hover */
+#schedule tbody tr:hover td{
+  background: rgba(43,111,138,0.08);
+  transition: background-color .12s ease-in-out;
+}
+
+/* No exam cells */
+#schedule td.noexam,
+#schedule .noexam{
+  background: rgba(31,35,40,0.05);
+  color: rgba(31,35,40,0.35);
+}

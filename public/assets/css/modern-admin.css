@@ -1,0 +1,1130 @@
+/* Bootstrap 3 reskin */
+
+/* Hard overrides: remove legacy textured backgrounds */
+html, body, #wrap {
+  background-image: none !important;
+}
+
+/* Base */
+html, body { height: 100%; }
+
+body {
+  background-color: #f3f1ed !important; 
+  color: #1f2328;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*  Theme tokens */
+:root {
+  --navy:  #1f3558;         /*  blue (primary) */
+  --accent: #2b6f8a;        /* teal-blue (links/primary buttons) */
+  --accent-hover: #225b71;
+
+  --burgundy: #6b2331;      /* dark red (danger only) */
+  --burgundy-hover: #571c28;
+
+  --surface: #ffffff;
+  --surface-warm: #fffdf9;
+
+  --text: #1f2328;
+  --muted: #5d6772;
+
+  --border: rgba(70, 60, 50, 0.18);
+  --border-soft: rgba(70, 60, 50, 0.10);
+
+  --shadow: 0 14px 30px rgba(30, 24, 18, 0.14);
+}
+
+/* Navbar */
+
+/* Navbar height + fixed offset*/
+.navbar { border: 0; box-shadow: none;}
+body { padding-top: 48px; }
+#wrap > .container,
+#wrap > .container-fluid { padding-top: 0; }
+
+/* Theme */
+.navbar-default{
+  background: rgba(232,228,222,0.78) !important; /* tint */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+   border-bottom: 1px solid rgba(31,53,88,0.10) !important;
+}
+/* одинаковая ширина navbar на всех страницах */
+.navbar > .container,
+.navbar > .container-fluid{
+  width: calc(100% - 48px) !important;
+  max-width: 1600px !important;
+}
+
+/* Brand */
+.navbar-default .navbar-brand{
+  font-size: 15px;
+  padding: 0 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #1f3558 !important;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #1f3558 !important;
+}
+
+/* Links */
+.navbar-default .navbar-nav > li > a{
+  font-size: 14px;
+  color: #1f3558 !important;
+}
+
+/* Dropdown normalization */
+.navbar-default .dropdown-menu > li > a{
+  line-height: 20px;
+  padding: 6px 20px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  background: transparent !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Mobile toggle visibility */
+.navbar-default .navbar-toggle {
+  border-color: rgba(255,255,255,0.35) !important;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #1f3558 !important;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background: rgba(255,255,255,0.08) !important;
+}
+
+/* Page header */
+.page-header { margin: 0 0 16px; border: 0; }
+
+.page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* Content card */
+.content-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+
+/* accent bar at top of content surface */
+.content-card:before {
+  content: "";
+  display: block;
+  height: 4px;
+  margin: -20px -20px 16px -20px;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, rgba(43,111,138,0.95), rgba(31,53,88,0.95));
+}
+
+/* Links */
+a { color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+
+/* Alerts */
+.alert {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.alert-success {
+  background: #eef7f1;
+  color: #1e5a3b;
+}
+
+.alert-danger {
+  background: #faeff1;
+  color: var(--burgundy);
+}
+
+/* Tables */
+.table { background: transparent; }
+
+.table > thead > tr > th {
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.table > tbody > tr > td {
+  border-top: 1px solid var(--border-soft) !important;
+  vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td {
+  background: #f8f4ee;
+}
+
+.table > tbody > tr > td,
+.table > thead > tr > th {
+  padding: 10px;
+}
+
+/* Forms */
+.form-control {
+  border-radius: 10px;
+  border-color: var(--border);
+  background: var(--surface-warm);
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: rgba(43,111,138,0.65) !important;
+  box-shadow: 0 0 0 3px rgba(43,111,138,0.18) !important;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 20px;
+  padding: 12px 0;
+  background: transparent;
+  color: rgba(31,35,40,0.45);
+  font-size: 12px;
+  text-align: center;
+}
+
+#assigner {
+  position: static !important; 
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+/* ширина контейнера на больших экранах */
+@media (min-width: 992px){
+  .container{
+    width: calc(100% - 48px); /* 24px слева + 24px справа */
+    max-width: 1600px;
+  }
+}
+
+/* на очень больших экранах можно больше */
+@media (min-width: 1800px){
+  .container{ max-width: 1800px; }
+}
+
+
+/* ===========
+   Buttons v4
+   =========== */
+
+/* Kill bootstrap-theme gloss everywhere */
+.btn,
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  background-image: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
+/* Base button */
+.btn {
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 7px 12px;
+  line-height: 1.25;
+  border: 1px solid transparent;
+}
+
+/* Icon alignment */
+.btn .glyphicon { top: 1px; margin-right: 6px; }
+
+/* ---------- OUTLINE STYLE (default) ---------- */
+/* Default/neutral */
+.btn-default {
+  background: rgba(255,255,255,0.60) !important;
+  border-color: rgba(70, 60, 50, 0.22) !important;
+  color: var(--text) !important;
+}
+.btn-default:hover,
+.btn-default:focus {
+  background: rgba(255,255,255,0.92) !important;
+  border-color: rgba(70, 60, 50, 0.32) !important;
+}
+
+/* View / Info: make it outline (no fill) */
+.btn-info {
+  background: rgba(43,111,138,0.08) !important;
+  border-color: rgba(43,111,138,0.45) !important;
+  color: var(--accent-hover) !important;
+}
+.btn-info:hover,
+.btn-info:focus {
+  background: rgba(43,111,138,0.14) !important;
+  border-color: rgba(43,111,138,0.65) !important;
+}
+
+/* Primary: also outline-ish, calm */
+.btn-primary {
+  background: rgba(31,53,88,0.06) !important;
+  border-color: rgba(31,53,88,0.40) !important;
+  color: var(--navy) !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: rgba(31,53,88,0.12) !important;
+  border-color: rgba(31,53,88,0.60) !important;
+}
+
+/* Success: outline */
+.btn-success {
+  background: rgba(47,128,52,0.08) !important;
+  border-color: rgba(47,128,52,0.45) !important;
+  color: #276a2b !important;
+}
+.btn-success:hover,
+.btn-success:focus {
+  background: rgba(47,128,52,0.14) !important;
+  border-color: rgba(47,128,52,0.65) !important;
+}
+
+/* Warning: outline */
+.btn-warning {
+  background: rgba(184,121,26,0.10) !important;
+  border-color: rgba(184,121,26,0.45) !important;
+  color: #855012 !important;
+}
+.btn-warning:hover,
+.btn-warning:focus {
+  background: rgba(184,121,26,0.16) !important;
+  border-color: rgba(184,121,26,0.65) !important;
+}
+
+/* ---------- DANGER ---------- */
+.btn-danger {
+  background: var(--burgundy) !important;
+  border-color: var(--burgundy) !important;
+  color: #fff !important;
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background: var(--burgundy-hover) !important;
+  border-color: var(--burgundy-hover) !important;
+}
+/* ===============
+   Comment button 
+   =============== */
+
+/* Comment */
+.btn-comment {
+  background: transparent !important;
+  border-color: rgba(43,111,138,0.40) !important;
+  color: var(--accent-hover) !important;
+}
+.btn-comment:hover,
+.btn-comment:focus {
+  background: rgba(43,111,138,0.10) !important;
+  border-color: rgba(43,111,138,0.60) !important;
+  color: var(--accent-hover) !important;
+}
+
+/* Table action buttons */
+.table td .btn,
+.table td .btn-sm {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 10px;
+  margin: 0 !important;
+}
+
+/* tone down fully-filled buttons */
+.table td .btn:not(.btn-danger) {
+  filter: none !important;
+}
+
+.comment-preview, .comment-full, .comment-rest{
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word; 
+}
+
+.comment-toggle-link{
+  font-weight: 600;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+#sortabletable th.col-comment,
+#sortabletable td.col-comment{
+  min-width: 260px;
+  max-width: 420px;
+  width: 380px;
+}
+
+#sortabletable th.col-comment,
+#sortabletable td.col-comment {
+  text-align: left !important;
+  vertical-align: top;
+}
+
+#sortabletable td.col-comment .comment-preview,
+#sortabletable td.col-comment .comment-full,
+#sortabletable td.col-comment .comment-rest {
+  text-align: left !important;
+}
+
+.comment-rest.collapse,
+.comment-rest.collapsing {
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+
+.comment-rest {
+  display: inline;
+}
+.comment-rest.collapse:not(.in) { /* если Bootstrap 3 */
+  display: none;
+}
+.comment-rest.collapse.in {
+  display: inline;
+}
+
+/* ================
+   Calendar button 
+   ================ */
+
+.btn-calendar {
+  background: rgba(36, 167, 172, 0.22) !important;
+  border: 1px solid rgba(36, 167, 172, 0.45) !important;
+  color: #1e6f73 !important;
+
+  font-size: 14px; 
+  font-weight: 700;
+  padding: 7px 14px;
+
+  border-radius: 12px;
+  line-height: 1.25;
+
+  transition: all 0.18s ease;
+}
+.btn-calendar .glyphicon {
+  font-size: 15px; 
+}
+.btn-calendar:hover,
+.btn-calendar:focus {
+  background: rgba(36, 167, 172, 0.35) !important;
+  border-color: rgba(36, 167, 172, 0.75) !important;
+  color: #155b5e !important;
+}
+.calendar-wrapper {
+  margin-top: 36px;  
+}
+
+#openCalendarBtn {
+  width: auto !important;
+  min-width: 130px;
+}
+
+/* ==============
+   Table actions
+   ============== */
+
+/* Turn the toolbar/group into inline row inside table cells */
+.table td .btn-toolbar,
+.table td .btn-group {
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;   
+  gap: 4px;
+  white-space: nowrap;
+  margin: 0 !important;
+}
+
+.table td .btn-group {
+  float: none !important;
+}
+
+/* Make table action buttons tighter */
+.table td .btn {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+/* make icons a bit tighter */
+.table td .btn .glyphicon {
+  margin-right: 6px;
+}
+
+
+/* =========================
+   Panels / nested cards 
+   ========================= */
+
+/* Panel base */
+.panel {
+  border: 1px solid var(--border-soft) !important;
+  border-radius: 14px !important;
+  background-image: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+/* Nested panel inside a content-card*/
+.content-card .panel {
+  background: rgba(31,53,88,0.06) !important;      /* navy tint */
+  border-color: rgba(31,53,88,0.14) !important;
+  box-shadow: 0 4px 12px rgba(31,53,88,0.06) !important;
+}
+
+/* Panel heading: deeper but still light */
+.panel-heading {
+  background: linear-gradient(
+    180deg,
+    rgba(31,53,88,0.18),
+    rgba(31,53,88,0.10)
+  ) !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid rgba(31,53,88,0.16) !important;
+
+  font-weight: 800;
+  padding: 12px 16px;
+}
+
+/* Panel body */
+.panel-body {
+  background: var(--surface) !important;
+  padding: 16px;
+}
+
+/*  footer */
+.panel-footer {
+  background: rgba(31,53,88,0.04) !important;
+  border-top: 1px solid rgba(31,53,88,0.12) !important;
+}
+/* different background for nested content-cards */
+.content-card .content-card {
+  background: rgba(31,53,88,0.04) !important;
+  border-left: 4px solid rgba(43,111,138,0.35) !important;
+  border: 1px solid var(--border-soft) !important;
+}
+
+/* If old layout uses .well */
+.well {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+}
+
+/* ======================
+   Page actions toolbar 
+   ====================== */
+/* Top bar on pages like Professors */
+.top-button-bar.btn-group{
+  display: inline-flex !important;
+  flex-wrap: wrap;
+  gap: 12px;  
+  float: none !important;    /* Bootstrap 3 */
+}
+
+/* disable merge effect inside that group */
+.top-button-bar.btn-group > .btn + .btn{
+  margin-left: 0 !important;
+}
+
+/* ensure gap is the only spacing */
+.top-button-bar.btn-group .btn{
+  margin: 0 !important;
+  border-radius: 10px !important;
+}
+
+/* Top action bar: always one line */
+.top-button-bar{
+  display: inline-flex !important;
+  flex-wrap: nowrap !important;  
+  gap: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px){
+  .top-button-bar,
+  .table td .btn-group{
+    gap: 4px;
+  }
+}
+
+/* ===========
+   Pagination 
+   ========== */
+
+.pagination > li > a,
+.pagination > li > span {
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  min-width: 38px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.95) !important;
+  border: 1px solid rgba(43,111,138,0.45) !important; 
+  color: var(--accent-hover) !important;
+
+  border-radius: 9px !important;
+  margin-right: 6px;
+}
+
+/* Hover */
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  background: rgba(43,111,138,0.10) !important;
+  border-color: rgba(43,111,138,0.75) !important;
+  color: var(--accent-hover) !important;
+}
+
+/* Active */
+.pagination > .active > a,
+.pagination > .active > span {
+  background: rgba(31,53,88,0.20) !important;
+  border-color: var(--navy) !important; 
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+}
+
+/* Disabled */
+.pagination > .disabled > span,
+.pagination > .disabled > a {
+  background: rgba(255,255,255,0.6) !important;
+  border-color: rgba(43,111,138,0.20) !important;
+  color: rgba(31,35,40,0.35) !important;
+}
+
+
+/* ======================
+   Form action buttons 
+   ====================== */
+
+.form-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.form-actions-bar .btn {
+  min-width: 110px;  
+  text-align: center;
+}
+
+.login-form {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+#examperiod {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.form-actions-left{
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.filters-row > .col-md-3 + .col-md-3 {
+  margin-left: 20px;
+}
+
+.filters-row > .col-md-3 + .col-md-3 + .col-md-2 {
+  margin-left: 20px;
+}
+
+/* Schedule page spacing */
+#schedule {
+  position: static !important;
+  top: auto !important;
+  margin-top: 24px !important;
+}
+
+#calendar, #schedule-contents {
+  width: 100%;
+}
+
+#schedule-contents {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#schedule-contents th.mark:first-child,
+#schedule-contents td.mark {
+  width: 190px;  
+  white-space: nowrap;
+}
+
+#schedule-contents thead th {
+  white-space: nowrap;
+}
+
+.courses-filter{
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+/* =========================
+   Schedule Table Reskin
+   ========================= */
+
+#schedule-contents {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0;
+}
+
+/* HEADER */
+#schedule-contents thead th {
+  background: rgba(31, 53, 88, 0.18); 
+  color: var(--text);
+  font-weight: 800;
+  text-align: center;
+  border-right: 1px solid rgba(31,53,88,0.12);
+  padding: 12px;
+}
+
+#schedule-contents thead th:first-child {
+  text-align: left;
+}
+
+/* ROWS */
+#schedule-contents tbody tr:nth-child(odd) td {
+  background: #f8f4ee; /
+}
+
+#schedule-contents tbody tr:hover td {
+  background: rgba(43,111,138,0.06);
+}
+
+/* CELLS */
+#schedule-contents td {
+  border-top: 1px solid var(--border-soft);
+  border-right: 1px solid var(--border-soft);
+  padding: 10px;
+  vertical-align: top;
+  background: var(--surface);
+}
+
+/* FIRST COLUMN (day column) */
+#schedule-contents td.mark {
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(31,53,88,0.04);
+}
+
+/* REMOVE last right border */
+#schedule-contents tr td:last-child,
+#schedule-contents thead th:last-child {
+  border-right: none;
+}
+
+/* Schedule drag items */
+#schedule-contents .drag,
+#courses .drag {
+  background: rgba(43,111,138,0.15) !important;
+  border: 1px solid rgba(43,111,138,0.35) !important;
+  color: var(--text) !important;
+  border-radius: 10px !important;
+  padding: 6px 8px !important;
+  margin-bottom: 6px !important;
+  cursor: grab !important;
+  transition: all 0.15s ease !important;
+}
+
+#schedule-contents .drag:hover,
+#courses .drag:hover {
+  background: rgba(43,111,138,0.25) !important;
+}
+
+#schedule-contents .drag.dummy,
+#courses .drag.dummy {
+  background: rgba(31,53,88,0.08) !important;
+  border-color: rgba(31,53,88,0.25) !important;
+}
+#topbar {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 0 16px 0 !important;
+  margin-bottom: 12px;
+}
+/* Schedule page tighter layout */
+.schedule-page {
+  margin-top: -10px;
+}
+
+.schedule-page #topbar {
+  margin-top: -2px;
+  padding-top: 0;
+}
+
+.schedule-page #schedule {
+  margin-top: 0 !important;
+}
+
+
+.import-warning-wrapper {
+  background: transparent !important;
+}
+/* =========================
+   Import Doctorals warning
+   ========================= */
+
+.import-danger {
+  background: transparent !important;
+}
+/* whole import section container */
+.import-panel{
+  max-width: 920px;    
+  margin-top: 12px;
+}
+
+/* warning card  */
+.import-warning{
+  width: 100%;
+  max-width: none;
+  margin: 0 0 14px 0;
+  padding: 16px 18px;
+
+  background: rgba(107,35,49,0.08);
+  border: 1px solid rgba(107,35,49,0.28);
+  border-left: 5px solid var(--burgundy);
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(30,24,18,0.10);
+}
+
+.import-warning__title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  color: var(--burgundy);
+  margin-bottom: 6px;
+}
+
+.import-warning__text{
+  color: rgba(31,35,40,0.88);
+  line-height: 1.35;
+}
+
+.top-button-bar{
+  display: inline-flex !important;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+/* upload area spacing */
+.import-upload{
+  padding: 0; 
+}
+
+#importConsole,
+#importConsole * { box-sizing: border-box; } 
+
+#fileToUpload{
+  display: block;
+  margin: 0 0 14px 0;
+}
+
+#importBtn,
+#uploadBtn{
+  border-radius: 12px !important;
+}.sticky-hscroll{
+  position: fixed;
+  left: 240px;
+  right: 0;
+  bottom: 0;
+
+  height: 12px;
+  padding: 0;
+  box-sizing: border-box;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  z-index: 999;
+  display: none;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  margin: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+
+  scrollbar-color: rgba(31,53,88,0.35) transparent;
+}
+
+body.sidebar-collapsed .container .sticky-hscroll{
+  left: 0 !important;
+}
+
+.sticky-hscroll__inner{ height: 1px; }
+
+.sticky-hscroll::-webkit-scrollbar{ height: 12px; }
+.sticky-hscroll::-webkit-scrollbar-track{ background: transparent !important; }
+.sticky-hscroll::-webkit-scrollbar-thumb{
+  background: rgba(31,53,88,0.35);
+  border-radius: 999px;
+}
+.sticky-hscroll::-webkit-scrollbar-thumb:hover{
+  background: rgba(31,53,88,0.50);
+}
+
+/* hide native scrollbar inside the real table scroller */
+#doctoralsTableScroll{
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#doctoralsTableScroll::-webkit-scrollbar{ height: 0 !important; }
+
+.top-button-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap; /* чтобы не ломалось на узком экране */
+}
+
+.btn-left, .btn-right{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn-right{
+  margin-left:auto;
+}
+
+/* ===========================
+   VERTICAL SCROLLBAR 
+   =========================== */
+
+/* Firefox */
+html{
+  scrollbar-width: auto; 
+  scrollbar-color: rgba(31,53,88,0.35) transparent;
+    scrollbar-gutter: stable;
+   overflow-y: scroll;
+   overflow-x: hidden;
+}
+
+/* Chrome/Edge/Safari: vertical page scrollbar */
+html::-webkit-scrollbar{
+  width: 12px; 
+}
+html::-webkit-scrollbar-track{
+  background: transparent !important;
+}
+html::-webkit-scrollbar-thumb{
+  background: rgba(31,53,88,0.35);
+  border-radius: 999px;
+  
+}
+html::-webkit-scrollbar-thumb:hover{
+  background: rgba(31,53,88,0.50);
+}
+
+/* protect sticky bar from global/page rules*/
+.sticky-hscroll::-webkit-scrollbar{ height: 12px; }
+.sticky-hscroll::-webkit-scrollbar-track{ background: transparent !important; }
+.sticky-hscroll::-webkit-scrollbar-thumb{
+  background: rgba(31,53,88,0.35);
+  border-radius: 999px;
+}
+.sticky-hscroll::-webkit-scrollbar-thumb:hover{
+  background: rgba(31,53,88,0.50);
+}
+
+#wrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-footer {
+  margin-top: auto;
+}
+
+.admin-layout{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-sidebar{
+  background: #e2ddd6;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(8px);
+  border-right: 1px solid rgba(255,255,255,0.06);
+
+  width: 240px;
+  color: #1f3558;
+  position: fixed;
+  top: 48px;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  padding: 12px 10px;
+  transition: all .3s ease;
+
+}
+.admin-content{
+  flex: 1;
+  margin-left: 240px;
+  width: 100%;
+  padding: 20px 0;
+  padding-bottom: 30px;
+  transition: all .3s ease;
+}
+
+.sidebar-group-title{
+  font-size: 11px;
+  opacity: .75;
+  letter-spacing: .08em;
+  margin: 10px 10px 6px;
+}
+
+.sidebar-divider{
+  height: 1px;
+  background: rgba(255,255,255,.15);
+  margin: 10px 10px;
+}
+
+.sidebar-nav{ list-style:none; padding:0; margin:0; }
+.sidebar-nav > li{ margin:2px 0; }
+
+.sidebar-link{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: rgba(31,53,88,0.85);
+  text-decoration: none;
+}
+
+.sidebar-link:hover,
+.sidebar-link:focus,
+.sidebar-link:active {
+  background: rgba(255,255,255,0.10);
+  color: rgba(31,53,88,0.85) !important;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+/* active убрать зеленые подчеркиваня в сайд баре*/
+.sidebar-link.active,
+.sidebar-link.active:hover,
+.sidebar-link.active:focus,
+.sidebar-nav > li.active > a.sidebar-link {
+  background: rgba(255,255,255,.22);
+  color: rgba(31,53,88,0.85) !important;
+  font-weight: 600;
+}
+
+
+.sidebar-nav > li.active > a.sidebar-link{
+  background: rgba(255,255,255,.22);
+  font-weight: 600;
+}
+
+/* адаптив */
+@media (max-width: 992px){
+  .admin-sidebar{ display:none; }
+  .admin-content{ margin-left: 0; }
+}
+
+body.sidebar-collapsed .admin-sidebar {
+    margin-left: -240px;
+}
+
+body.sidebar-collapsed .admin-content {
+    margin-left: 0;
+}
+.admin-sidebar { z-index: 1000; }
+.admin-content { position: relative; z-index: 1; }
+
+.sidebar-toggle{
+  float: left;
+  margin: 8px 10px 8px 0;
+  padding: 9px 10px;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+.sidebar-toggle:hover{
+  background: rgba(255,255,255,.08);
+  border-radius: 4px;
+}
+
+.sidebar-toggle .st-bar{
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px 0;
+  background: #1f3558;
+}
+/* ===== Force ALL Bootstrap 3 navbars to 48px ===== */
+.navbar.navbar-fixed-top,
+.navbar.navbar-static-top,
+.navbar.navbar-default {
+  min-height: 48px !important;
+  height: 48px !important;
+  margin-bottom: 0 !important;
+}
+
+.navbar.navbar-default .navbar-header {
+  height: 48px !important;
+  min-height: 48px !important;
+}
+
+.navbar.navbar-default .navbar-brand {
+  height: 48px !important;
+  line-height: 48px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.navbar.navbar-default .navbar-nav {
+  margin: 0 !important;
+}
+
+.navbar.navbar-default .navbar-nav > li > a {
+  height: 48px !important;
+  line-height: 48px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Mobile toggle */
+.navbar.navbar-default .navbar-toggle {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}

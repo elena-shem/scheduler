@@ -1,0 +1,15 @@
+div.panel-body{
+    background-image: url('../img/tile.png');
+}
+#accordion > div.panel{
+    border-radius: 7px;
+}
+.panel-default > div.panel-heading{
+    background-color: #a4aab1;
+}
+
+.panel-title > a{
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
+}
