@@ -99,8 +99,8 @@ return array(
 		'smtp'  => array(
 			'host'      => 'ssl://smtp.uoa.gr', 
 			'port'      => 465, 
-			'username'  => 'sdi2200235', 
-			'password'  => 'Kuro08Uni12!19',
+			'username'  => '', 
+			'password'  => '',
 			'timeout'   => 5,
 		),
 
